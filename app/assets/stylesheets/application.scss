@@ -14,4 +14,21 @@
  *= require_self
  */
 @import "bootstrap-sprockets";
-@import "bootstrap"; 
+@import "bootstrap";
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+.clearfix:after {
+	content:"";
+	display:block;
+	clear: both;
+}
+header span{
+	color: white;
+	font-size: 20px;
+}
+.nav-list {
+	text-align: center;
+}

@@ -1,0 +1,9 @@
+<%= link_to 'logout', destroy_user_session_path,method: :delete %>
+<div class=flash-message>
+	<% if flash[:notice] %>
+		<p><%= flash[:notice] %></p>
+	<% end %>
+</div>
+
+<h1>Users#show</h1>
+<p>Find me in app/views/users/show.html.erb</p>

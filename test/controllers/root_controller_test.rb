@@ -1,7 +1,9 @@
 require 'test_helper'
 
 class RootControllerTest < ActionDispatch::IntegrationTest
-  # test "the truth" do
-  #   assert true
-  # end
+  test "should get top" do
+    get root_top_url
+    assert_response :success
+  end
+
 end
