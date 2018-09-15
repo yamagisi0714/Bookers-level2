@@ -8,8 +8,8 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-    <header class="navbar-top navbar-inverse">
-      <div class="container clearfix">
+    <header class="navbar navbar-fixed-top navbar-inverse">
+      <div class="container">
         <nav class="nav navbar-nav navbar-left">
           <span>Bookers</span>
         </nav>
@@ -17,28 +17,28 @@
           <ul class="nav navbar-nav navbar-right">
             <% if user_signed_in? %>
               <li>
-                <%= link_to user_path do %>
-                <p class="glyphicon glyphicon-home home">
-                Home</p>
-                <% end %>
+                <%= link_to user_path(current_user) do %>
+                  <p class="glyphicon glyphicon-home home">
+                    Home</p>
+                  <% end %>
               </li>
               <li>
-                <%= link_to user_path do %>
-                  <p class="glyphicon glyphicon-home home">
+                <%= link_to users_path do %>
+                  <p class="glyphicon glyphicon-user users">
                     Users
                   </p>
                 <% end %>
               </li>
               <li>
-                <%= link_to user_path do %>
-                <p class="glyphicon glyphicon-home home">
+                <%= link_to books_path do %>
+                <p class="glyphicon glyphicon-book books">
                   Books
                 </p>
                 <% end %>
               </li>
               <li>
                 <%= link_to destroy_user_session_path, method: :delete do %>
-                  <p class="glyphicon glyphicon-home home">
+                  <p class="glyphicon glyphicon-log-out logout">
                     logout
                   </p>
                 <% end %>
@@ -53,21 +53,21 @@
               </li>
               <li>
                 <%= link_to home_about_path do %>
-                <p class="glyphicon glyphicon-link" aria-hidden="true">
+                <p class="glyphicon glyphicon-link about" aria-hidden="true">
                   About
                 </p>
                 <% end %>
               </li>
               <li>
                 <%= link_to new_user_registration_path do %>
-                <p class="glyphicon glyphicon-edit" aria-hidden="true">
+                <p class="glyphicon glyphicon-edit sign_up" aria-hidden="true">
                   sign up
                 </p>
                 <% end %>
               </li>
               <li>
                 <%= link_to new_user_session_path do %>
-                <p class="glyphicon glyphicon-log-in" aria-hidden="true">
+                <p class="glyphicon glyphicon-log-in sign_in" aria-hidden="true">
                   login
                 </p>
                 <% end %>
@@ -77,11 +77,13 @@
         </nav>
       </div>
     </header>
+    <div class="main">
     <%= yield %>
+    </div>
     <footer>
       <div class="container">
         <div class="row">
-          <div class="pull-right">
+          <div class="col-xs-3 col-xs-offset-9">
             <p>CopyRight Infratop.inc</p>
           </div>
         </div>

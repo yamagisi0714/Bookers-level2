@@ -7,5 +7,7 @@ class User < ApplicationRecord
   validates :name,
 	  uniqueness: { case_sensitive: :false },
 	  length: { minimum: 2, maximum: 20 }
-  has_many :users
+  attachment :profile_image
+
+  has_many :books
 end
