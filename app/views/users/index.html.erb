@@ -14,9 +14,11 @@
 				<tbody>
 					<% @userprofile.each do |user| %>
 					<tr>
-						<td><%= attachment_image_tag user, :profile_image, :fill, 50, 50, format: 'jpeg', fallback: "no_image.jpg", size:'50x50' %></td>
+						<td>
+							<%= attachment_image_tag user, :profile_image, :fill, 50, 50, format: 'jpeg', fallback: "no_image.jpg", size:'50x50' %>
+						</td>
 						<td><%= user.name %></td>
-						<td>data</td>
+						<td><%= link_to "show",user_path(user), class:"user_#{user.id}"%></td>
 					</tr>
 					<% end %>
 				</tbody>

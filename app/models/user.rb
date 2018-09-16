@@ -9,5 +9,5 @@ class User < ApplicationRecord
 	  length: { minimum: 2, maximum: 20 }
   attachment :profile_image
 
-  has_many :books
+  has_many :books, dependent: :destroy
 end

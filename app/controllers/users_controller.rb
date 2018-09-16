@@ -9,14 +9,7 @@ class UsersController < ApplicationController
   	@user = User.find(params[:id])
     @userprofile = User.all
     @newbook = Book.new
-  end
-  def create
-    book = Book.new(book_params)
-    if book.save
-       redirect_to book_path(book), notice: "Book was successfully created."
-    else
-        render action: :index
-     end
+    @books = current_user.books.all
   end
 
   def edit

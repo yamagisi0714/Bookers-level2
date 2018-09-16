@@ -2,13 +2,13 @@
 	<h2>User info</h2>
 	<%= form_for(@user) do |f| %>
 	<p><strong>name</strong>
-		<%= f.text_field :name %>
+		<%= f.text_field :name, class:"name" %>
 	</p>
 	<p><strong>Image</strong>
-		<%= f.attachment_field :profile_image, placeholder: "プロフィール画像" %>
+		<%= f.attachment_field :profile_image, placeholder: "プロフィール画像", class:"user_image" %>
 	</p>
 	<p><strong>introduction</strong>
-		<%= f.text_area :introduction%>
+		<%= f.text_area :introduction, class:"introduction" %>
 	</p>
 	<%= f.submit " Update User " %>
 	<% end %>
