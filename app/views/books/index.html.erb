@@ -21,12 +21,12 @@
 					<% @books.each do |book| %>
 					<tr>
 						<td class="table-img">
-							<%= link_to user_path(book), class:"user_#{book.id}" do |link|%>
+							<%= link_to user_path(book), class: "user_#{book.id}" do |link|%>
 							<%= attachment_image_tag book.user, :profile_image, :fill, 50, 50, format: 'jpeg', fallback: "no_image.jpg", size:'50x50' %>
 							<% end %>
 						</td>
 						<td>
-							<%= link_to book_path(book), class:"user_#{book.id}" do |link| %>
+							<%= link_to book_path(book), class: "user_#{book.id}" do |link| %>
 							<%= book.title %>
 							<% end %>
 						</td>
