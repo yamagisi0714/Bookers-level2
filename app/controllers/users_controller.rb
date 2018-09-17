@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
+  validates :Opinion,    length: { maximum: 10 }
   def index
     @user = User.find(current_user.id)
     @userprofile = User.all
@@ -9,7 +10,7 @@ class UsersController < ApplicationController
   	@user = User.find(params[:id])
     @userprofile = User.all
     @newbook = Book.new
-    @books = current_user.books.all
+    @books = current_user.books
   end
 
   def edit
